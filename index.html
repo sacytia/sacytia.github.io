@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="None">
-        
-        
+
+
         <link rel="shortcut icon" href="img/favicon.ico">
         <title>Sacytia</title>
         <link href="css/bootstrap-custom.min.css" rel="stylesheet">
@@ -22,7 +22,7 @@
         <script src="js/jquery-1.10.2.min.js" defer></script>
         <script src="js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script>hljs.initHighlightingOnLoad();</script>
     </head>
 
     <body class="homepage">
@@ -50,6 +50,9 @@
                                 <a href=".">Home</a>
                             </li>
                             <li >
+                                <a href="technical/">Technical</a>
+                            </li>
+                            <li >
                                 <a href="about/">About</a>
                             </li>
                         </ul>
@@ -66,7 +69,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="about/">
+                                <a rel="prev" href="technical/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -109,12 +112,16 @@ is as shown:
   </a>
 </center></p>
 <p><br/></p>
+<hr />
+<p><br/></p>
 <h2 id="components">Components</h2>
 <p>Sacytia ships with several modules (or packages), most of which function
 independently. However, few modules may have dependencies on other modules and
 will need these in order to work properly. Some of the core modules shipped with
  Sacytia are listed here. <strong>It is important to note that some of these modules
-may need to be re-engineered in order to be used with user-specific platforms.</strong></p>
+may need to be re-engineered in order to be used with user-specific platforms.</strong>
+<br/>
+<br/></p>
 <blockquote>
 <p><h3>Perception</h3>
 The <code>perception_core</code> module handles how the robot perceives the environment
@@ -165,13 +172,20 @@ Sacytia provides platform-dependent apps to communicate with the robotic system.
 The develpoment platforms include <em>Ubuntu</em> and <em>Android</em>.
 <br/>
 <br/></p>
-</blockquote></div>
+</blockquote>
+<p><br/></p>
+<blockquote>
+<p><h3>Hardware Drivers</h3>
+The hardware components of a robotic system vary from one manufacturer to
+another. Sacytia, upon request, is shipped with hardware drivers to
+support the user's custom hardware protocols to easily interface with
+<code>sacytia_core</code> and dependent packages.
+<br/>
+<br/></p>
+</blockquote>
+<p><br/></p>
+<hr /></div>
         </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
         <script>
             var base_url = ".",
                 shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
@@ -248,5 +262,5 @@ The develpoment platforms include <em>Ubuntu</em> and <em>Android</em>.
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-05-16 13:26:21
+Build Date UTC : 2019-05-16 19:17:15
 -->
