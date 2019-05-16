@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Sacytia</title>
+        <link href="css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/docco.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href=".">Sacytia</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href=".">Home</a>
+                            </li>
+                            <li >
+                                <a href="about/">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="disabled">
+                                <a rel="next" >
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="about/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#overview">Overview</a></li>
+        <li class="main "><a href="#components">Components</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><br/>
+<center><h1 style=font-size:130px>Sacytia</h1></center>
+<center><h4>Modular Autonomous Robot Software Framework</h1></center>
+<br/></p>
+<hr />
+<p><br/></p>
+<h2 id="overview">Overview</h2>
+<p>Sacytia accelerates the development of autonomous robotic systems of various
+kinds by providing modularised software packages built on top of the
+<a href="https://www.ros.org/">Robot Operating System</a> in order to realise a production
+ready robotic solution. The packages provided include algorithms for robotic
+perception, control and navigation. Moreover, these packages also include
+machine learning based algorithms for learning robotic control. Apart from the
+robot centric development packages, Sacytia also enables development of a
+Robot-as-a-Service (RaaS) model based platform by providing custom communication
+protocols to its users. The architecture of the Sacytia Robot Software Framework
+is as shown:
+<br/>
+<br/>
+<center>
+  <a href="url">
+    <img src="img/sacytia_overview.png" align="center" width="560" >
+  </a>
+</center></p>
+<p><br/></p>
+<h2 id="components">Components</h2>
+<p>Sacytia ships with several modules (or packages), most of which function
+independently. However, few modules may have dependencies on other modules and
+will need these in order to work properly. Some of the core modules shipped with
+ Sacytia are listed here. <strong>It is important to note that some of these modules
+may need to be re-engineered in order to be used with user-specific platforms.</strong></p>
+<blockquote>
+<p><h3>Perception</h3>
+The <code>perception_core</code> module handles how the robot perceives the environment
+around itself. Using sensors such as RGBD cameras and LiDARs, this module, along
+with its dependencies, generates a 3D map of the environment of operation. It
+extends upon the <a href="https://octomap.github.io/">OctoMap</a> library, and has been
+tested for operation with the <em>Intel RealSense D435</em> RGBD camera and the
+<em>Velodyne</em> LiDAR.
+<br/>
+<br/></p>
+</blockquote>
+<p><br/></p>
+<blockquote>
+<p><h3>Control</h3>
+The control modules are robot-platform dependent. For example, the control
+methods for legged robots are different than for wheeled robots. Though most of
+the recent research implements use of <em>optimal control</em> based framework for
+robotic control, which can be used for different kinds of robots, Sacytia also
+provides an interface to generate custom control policies for user-specified
+robot platform using <em>machine learning</em> based techniques. Currently, Sacytia
+supports control methods for <em>Autonomous Wheeled Mobile Robots</em>, <em>Legged Robots</em>
+and <em>Aerial Vehicles</em>.
+<br/>
+<br/></p>
+</blockquote>
+<p><br/></p>
+<blockquote>
+<p><h3>State Estimation</h3>
+For a robotic system to function, it is extremely important for it to know its
+precise location and state in the environment of operation. For a wheeled mobile
+robot, for example, its state would be its position and orientation in the given
+environment. The <code>state_estimation</code> modules Sacytia provides employs
+probabilistic state estimation methods fusing sensor data from both inertial
+measurement units and visual sensors. Moreover, the motor encoders are further
+used to estimate the motor velocities and floor friction.
+<br/>
+<br/></p>
+</blockquote>
+<p><br/></p>
+<blockquote>
+<p><h3>Command Interface</h3>
+Though autonomous, robotic systems need to be given high-level commands. For
+example, in an inspection site, an Autonomous Mobile Robot may, at least once,
+be needed to be given locations of the areas within the sites to be inspected.
+In order to provide such instructions to the robot, the developer may need to
+design a command interface that is user-friendly. To make this task easier,
+Sacytia provides platform-dependent apps to communicate with the robotic system.
+The develpoment platforms include <em>Ubuntu</em> and <em>Android</em>.
+<br/>
+<br/></p>
+</blockquote></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2019-05-16 13:26:21
+-->
