@@ -82,6 +82,7 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#overview">Overview</a></li>
+        <li class="main "><a href="#applications">Applications</a></li>
         <li class="main "><a href="#components">Components</a></li>
     </ul>
 </div></div>
@@ -94,6 +95,16 @@
 <hr />
 <p><br/></p>
 <h2 id="overview">Overview</h2>
+<p><br/>
+<center>
+  <a>
+    <img src="img/terra_alpha_overview.gif" width="360" hspace="20">
+  </a>
+  <a>
+    <img src="img/anymal_overview.gif" width="360" hspace="20"">
+  </a>
+</center>
+<br/></p>
 <p>Sacytia accelerates the development of autonomous robotic systems of various
 kinds by providing modularised software packages built on top of the
 <a href="https://www.ros.org/">Robot Operating System</a> in order to realise a production
@@ -107,10 +118,51 @@ is as shown:
 <br/>
 <br/>
 <center>
-  <a href="url">
+  <a>
     <img src="img/sacytia_overview.png" align="center" width="560" >
   </a>
 </center></p>
+<p><br/></p>
+<hr />
+<p><br/></p>
+<h2 id="applications">Applications</h2>
+<p><br/></p>
+<blockquote>
+<p><h3>Inspection</h3>
+The autonomous robots developed using Sacytia can be used in inspection sites
+such as for <em>nuclear power plants</em>, <em>mining</em>, <em>oil rigs</em>, and <em>solar and wind
+plants</em>.
+<br/>
+<br/></p>
+</blockquote>
+<p><br/></p>
+<blockquote>
+<p><h3>Logistics</h3>
+Replacing the traditional <em>automated guided vehicles (AGVs)</em>, Sacytia
+accelerates the development of the <em>autonomous wheeled mobile robots (AWMRs)</em>
+which further guarantee more efficient and robust performance for logistic
+operations.
+<br/>
+<br/></p>
+</blockquote>
+<p><br/></p>
+<blockquote>
+<p><h3>Agriculture</h3>
+The computer vision tools shipped with Sacytia can be used to develop robots for
+<em>precision farming</em>. Moreover, modifications in the framework could allow
+development of robots which could potentially be used for spraying of pesticides
+and fertilisers.
+<br/>
+<br/></p>
+</blockquote>
+<p><br/></p>
+<blockquote>
+<p><h3>Filming</h3>
+Autonomous robots built with Sacytia can be used for the purposes of filming.
+Several companies have explored this space in both aerial and ground domains.
+<br/>
+<br/></p>
+</blockquote>
 <p><br/></p>
 <hr />
 <p><br/></p>
@@ -169,7 +221,7 @@ be needed to be given locations of the areas within the sites to be inspected.
 In order to provide such instructions to the robot, the developer may need to
 design a command interface that is user-friendly. To make this task easier,
 Sacytia provides platform-dependent apps to communicate with the robotic system.
-The develpoment platforms include <em>Ubuntu</em> and <em>Android</em>.
+The development platforms include <em>Ubuntu</em> and <em>Android</em>.
 <br/>
 <br/></p>
 </blockquote>
@@ -184,8 +236,20 @@ support the user's custom hardware protocols to easily interface with
 <br/></p>
 </blockquote>
 <p><br/></p>
+<blockquote>
+<p><h3>Computer Vision</h3>
+In addition to perception modules, Sacytia includes some computer vision based
+algorithms for tasks such as <em>person detection and tracking (to implement
+person following robotic control)</em>, and <em>object detection and classification</em>.
+These do not require <code>sacytia_core</code> as a dependency, and hence, can be used with
+other software frameworks.
+<br/>
+<br/></p>
+</blockquote>
+<p><br/></p>
 <hr /></div>
         </div>
+
         <script>
             var base_url = ".",
                 shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
@@ -262,5 +326,5 @@ support the user's custom hardware protocols to easily interface with
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-05-16 19:17:15
+Build Date UTC : 2019-05-20 19:54:26
 -->
